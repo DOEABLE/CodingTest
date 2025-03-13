@@ -1,0 +1,6 @@
+-- 코드를 작성해주세요
+-- cm도 붙여야하잖아.(str붙이는 법)
+SELECT CONCAT(LENGTH,'cm') AS MAX_LENGTH
+FROM FISH_INFO
+ORDER BY LENGTH DESC
+LIMIT 1;
