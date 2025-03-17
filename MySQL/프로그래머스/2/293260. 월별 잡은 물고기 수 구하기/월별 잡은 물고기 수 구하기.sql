@@ -1,0 +1,6 @@
+-- 코드를 작성해주세요
+SELECT COUNT(ID) AS FISH_COUNT, MONTH(TIME) AS MONTH -- 잡은 날짜의 월만 추출
+FROM FISH_INFO
+GROUP BY MONTH(TIME)-- 월별로 잡은 물고기의 수
+-- FISH_COUNT가 0 이면 출력하지 않음
+ORDER BY MONTH;
