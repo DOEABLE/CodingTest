@@ -1,0 +1,19 @@
+-- 코드를 작성해주세요
+SELECT A.YEAR
+    , (B.MAX-A.SIZE_OF_COLONY)AS YEAR_DEV
+    , A.ID
+FROM 
+-- 1. 분화된 연도별 가장 큰 대장균의 크기에 대한 B TABLE
+    (SELECT YEAR(DIFFERENTIATION_DATE) AS YEAR, MAX(SIZE_OF_COLONY) AS MAX
+    FROM ECOLI_DATA
+    GROUP BY YEAR(DIFFERENTIATION_DATE)) AS B
+JOIN
+    (-- 2. A 기존 테이블의 데이터를 출력함과 동시에 추출한 YEAR만 출력해야함. 나머지 필요한 값들만 따로 출력해서 JOIN
+    SELECT YEAR(DIFFERENTIATION_DATE) AS YEAR, SIZE_OF_COLONY, ID
+    FROM ECOLI_DATA
+    )AS A
+ON B.YEAR = A.YEAR
+ORDER BY YEAR, YEAR_DEV;-- 분화되어 나온 날짜에서 YEAR을 분리한다.
+
+
+
