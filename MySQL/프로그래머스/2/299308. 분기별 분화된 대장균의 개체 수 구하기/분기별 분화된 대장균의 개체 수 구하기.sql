@@ -1,0 +1,8 @@
+-- 코드를 작성해주세요
+-- CEIL(소수를 올림해 가장 가까운 정수를 반환.)
+SELECT CONCAT(CEIL(MONTH(DIFFERENTIATION_DATE)/3),'Q')AS QUARTER, COUNT(*)AS ECOLI_COUNT
+FROM ECOLI_DATA
+GROUP BY QUARTER
+ORDER BY QUARTER
+
+-- MySQL에서는 GROUP BY를 사용하지 않는 경우, SELECT 절에 집계되지 않은 컬럼이 포함되면 오류가 발생
