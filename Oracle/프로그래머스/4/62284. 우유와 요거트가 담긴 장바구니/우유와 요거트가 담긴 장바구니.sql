@@ -1,0 +1,9 @@
+-- 코드를 입력하세요
+
+SELECT cart_id
+FROM CART_PRODUCTS
+WHERE NAME ='Milk' 
+INTERSECT
+SELECT cart_id
+FROM CART_PRODUCTS
+WHERE NAME ='Yogurt'
